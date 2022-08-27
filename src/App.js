@@ -17,7 +17,6 @@ function App() {
       .then(response => response.json())
       .then(result => {
         console.log(result)
-        // console.log(result)
         setWeather(result)
         setQuery('')});
     }
@@ -41,13 +40,13 @@ function App() {
           <input
           type="text"
           className="search-box"
-          placeholder="Search"
+          placeholder="Search The Location Here"
           onChange={e => setQuery(e.target.value)}
           value={query}
           onKeyPress={search}
           />
         </div>
-       {(typeof weather.main != "undefined") ? (
+       {/* {(typeof weather.main != "undefined") ? (
         <div>
            <div className="location-box">
           <div className="location">{weather.name}, {weather.sys.country}</div>
@@ -60,7 +59,30 @@ function App() {
           <div className="weather">{weather.weather[0].main}</div>
         </div>
         </div>
-       ):('')}
+       ):('')} */}
+
+       {(typeof weather.main != "undefined") ? (
+        <div className="weather-container">
+          <div>
+            <p>{weather.name}, {weather.sys.country}</p>
+            <p>{dateBuilder(new Date())}</p>
+          </div>
+          <div className="weather-box">
+          <div className="temp">
+            {Math.round(weather.main.temp)}c
+          </div>
+          <div className="weather">{weather.weather[0].main}</div>
+        </div>
+        </div>
+       ):
+       (
+        <div className="welcome-container">
+          <div className="welcome-text"><p>Welcome to the <i style={{color:'red'}}>Weather App</i></p></div>
+          <div className="welcome-image">
+            <p>s</p>
+          </div>
+        </div>
+       )}
       </main>
     </div>
   );

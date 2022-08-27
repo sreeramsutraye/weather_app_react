@@ -8,15 +8,8 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
-.App{
-  background-image: url('./assets/images/sunny.jpg');
-  background-size: cover;
-  background-position: bottom;
-  transition: 0.4 ease-out;
-}
-
 .App-warm{
-  background-image: url('./assets/images/cloudy.jpg')
+  background-image: url('./assets/images/cloudy_day.png')
 }
 
 main{
@@ -36,16 +29,47 @@ main{
   appearance: none;
   background:none;
   outline: none;
-  background-color: rgba(255,255,255,0.5);
-  border-radius: 0px 0px 16px 16px;
-  margin-top: -25px;
-  box-shadow: 0px 5px rgba(0,0,0,0.2);
-  color: #313131;
+  border-radius: 16px 16px 16px 16px;
+  margin-top: 25px;
+  color: black;
   font-size:20px;
-  transition: 0.4s ease;
 }
 
-.location-box .location{
+.weather-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  text-align: center;
+  background-color: #fff;
+  font-size:50px;
+  border: 2px solid black;
+}
+
+.welcome-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-text{
+  font-size:50px;
+  margin-top:100px;
+  font-family:monospace;
+  font-weight:bold;
+}
+
+.welcome-image{
+  background-image: url('./assets/images/sunny_day.png');
+  /* background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out; */
+  height: 50px;
+  width: 50px;
+}
+
+/* .location-box .location{
   color: #fff;
   font-size: 32px;
   font-weight:500;
@@ -86,4 +110,4 @@ main{
   font-size: 48px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
-}
+} */
